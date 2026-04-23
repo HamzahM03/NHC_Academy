@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from database import engine, Base
 import models
 from routers import auth, guardians, participants, packages, sessions, attendance, payments,  expenses, profit
@@ -6,6 +8,14 @@ from routers import auth, guardians, participants, packages, sessions, attendanc
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="CampOps API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(auth.router)
 app.include_router(guardians.router)
