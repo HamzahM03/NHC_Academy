@@ -55,14 +55,17 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen">
       <div className="border-b px-6 py-4 flex items-center justify-between">
-        <p className="font-semibold">CampOps</p>
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={() => navigate("/payments")}>Payments</Button>
-          <Button variant="outline" size="sm" onClick={() => navigate("/expenses")}>Expenses</Button>
-          <Button variant="outline" size="sm" onClick={() => navigate("/profit")}>Profit</Button>
-          <Button variant="outline" size="sm" onClick={handleLogout}>Sign out</Button>
-        </div>
-      </div>
+  <p className="font-semibold">CampOps</p>
+  <div className="flex items-center gap-2 flex-wrap">
+    <Button variant="outline" size="sm" onClick={() => navigate("/guardians")}>Guardians</Button>
+    <Button variant="outline" size="sm" onClick={() => navigate("/sessions")}>Sessions</Button>
+    <Button variant="outline" size="sm" onClick={() => navigate("/packages")}>Packages</Button>
+    <Button variant="outline" size="sm" onClick={() => navigate("/payments")}>Payments</Button>
+    <Button variant="outline" size="sm" onClick={() => navigate("/expenses")}>Expenses</Button>
+    <Button variant="outline" size="sm" onClick={() => navigate("/profit")}>Profit</Button>
+    <Button variant="outline" size="sm" onClick={handleLogout}>Sign out</Button>
+  </div>
+</div>
 
       <div className="p-6 space-y-8 max-w-3xl">
         <h1 className="text-2xl font-semibold">
